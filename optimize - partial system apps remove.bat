@@ -24,7 +24,7 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 ::--------------------------------------
 
-title Optimization
+title Optimization_Windows_10_partial_apps_remove
 echo Applying prerequisites...
 echo Please wait a few minutes...
 
@@ -55,7 +55,7 @@ attrib "C:\PerfLogs" +h 1>NUL 2>NUL
 attrib "C:\Users\Public\Desktop" -h 1>NUL 2>NUL
 
 :: Set Hibernation type to Reduced
-powercfg /h /type reduced 1>NUL 2>NUL
+::powercfg /h /type reduced 1>NUL 2>NUL
 
 :: Delete "Microsoft Edge" shortcut from Desktop
 del /f /q "C:\Users\%USERNAME%\Desktop\Microsoft Edge.lnk" 1>NUL 2>NUL
@@ -161,9 +161,9 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\S
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps" /v "WinZipComputing.WinZipUniversal_3ykzqggjzj4z0" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
 
 :: Disable mouse acceleration
-reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
-reg add "HKCU\Control Panel\Mouse" /v "MouseThreshold1" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
-reg add "HKCU\Control Panel\Mouse" /v "MouseThreshold2" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
+::reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
+::reg add "HKCU\Control Panel\Mouse" /v "MouseThreshold1" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
+::reg add "HKCU\Control Panel\Mouse" /v "MouseThreshold2" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
 
 :: Disable Network Location Wizard prompts
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Network\NewNetworkWindowOff" /f 1>NUL 2>NUL
@@ -608,16 +608,16 @@ reg add "HKCU\Software\Policies\Microsoft\MicrosoftEdge\TabPreloader" /v "AllowP
 reg add "HKCU\Software\Policies\Microsoft\MicrosoftEdge\TabPreloader" /v "AllowTabPreloading" /t REG_DWORD /d "0" /f 1>NUL 2>NUL
 
 :: Change active title bar color to black
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" /v "AccentPalette" /t REG_BINARY /d "6B 6B 6B FF 59 59 59 FF 4C 4C 4C FF 3F 3F 3F FF 33 33 33 FF 26 26 26 FF 14 14 14 FF 88 17 98 00" /f 1>NUL 2>NUL
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" /v "StartColorMenu" /t REG_DWORD /d "4281545523" /f 1>NUL 2>NUL
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" /v "AccentColorMenu" /t REG_DWORD /d "4278190080" /f 1>NUL 2>NUL
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "AccentColor" /t REG_DWORD /d "4278190080" /f 1>NUL 2>NUL
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorizationColor" /t REG_DWORD /d "3288334336" /f 1>NUL 2>NUL
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorizationAfterglow" /t REG_DWORD /d "3288334336" /f 1>NUL 2>NUL
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorPrevalence" /t REG_DWORD /d "1" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" /v "AccentPalette" /t REG_BINARY /d "6B 6B 6B FF 59 59 59 FF 4C 4C 4C FF 3F 3F 3F FF 33 33 33 FF 26 26 26 FF 14 14 14 FF 88 17 98 00" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" /v "StartColorMenu" /t REG_DWORD /d "4281545523" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" /v "AccentColorMenu" /t REG_DWORD /d "4278190080" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\DWM" /v "AccentColor" /t REG_DWORD /d "4278190080" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorizationColor" /t REG_DWORD /d "3288334336" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorizationAfterglow" /t REG_DWORD /d "3288334336" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorPrevalence" /t REG_DWORD /d "1" /f 1>NUL 2>NUL
 
 :: Change inactive title bar color to grey
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "AccentColorInactive" /t REG_DWORD /d "4280953386" /f 1>NUL 2>NUL
+::reg add "HKCU\Software\Microsoft\Windows\DWM" /v "AccentColorInactive" /t REG_DWORD /d "4280953386" /f 1>NUL 2>NUL
 
 :: Remove acrylic blur on sign-in screen
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /v "DisableAcrylicBackgroundOnLogon" /t REG_DWORD /d "1" /f 1>NUL 2>NUL
@@ -630,7 +630,7 @@ powershell.exe "Get-AppxPackage *Microsoft.BingNews* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.BingSports* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.BingTranslator* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.BingWeather* | Remove-AppxPackage"
-powershell.exe "Get-AppxPackage *Microsoft.FreshPaint* | Remove-AppxPackage"
+::powershell.exe "Get-AppxPackage *Microsoft.FreshPaint* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.DesktopAppInstaller* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.Getstarted* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.GetHelp* | Remove-AppxPackage"
@@ -692,17 +692,17 @@ powershell.exe "Get-AppxPackage *Microsoft.People* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.Print3D* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.SkypeApp* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.Wallet* | Remove-AppxPackage"
-powershell.exe "Get-AppxPackage *Microsoft.Windows.Photos* | Remove-AppxPackage"
+::powershell.exe "Get-AppxPackage *Microsoft.Windows.Photos* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.WindowsAlarms* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.WindowsCamera* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.windowscommunicationsapps* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.WindowsFeedbackHub* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.WindowsMaps* | Remove-AppxPackage"
-powershell.exe "Get-AppxPackage *Microsoft.WindowsSoundRecorder* | Remove-AppxPackage"
+::powershell.exe "Get-AppxPackage *Microsoft.WindowsSoundRecorder* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.XboxApp* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.Xbox.TCUI* | Remove-AppxPackage"
-powershell.exe "Get-AppxPackage *Microsoft.ZuneMusic* | Remove-AppxPackage"
-powershell.exe "Get-AppxPackage *Microsoft.ZuneVideo* | Remove-AppxPackage"
+::powershell.exe "Get-AppxPackage *Microsoft.ZuneMusic* | Remove-AppxPackage"
+::powershell.exe "Get-AppxPackage *Microsoft.ZuneVideo* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *828B5831.HiddenCityMysteryofShadows* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *king.com.BubbleWitch3Saga* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Fitbit.FitbitCoach* | Remove-AppxPackage"
@@ -720,7 +720,7 @@ powershell.exe "Get-AppxPackage *Nordcurrent.CookingFever* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *NAVER.LINEwin8* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *microsoft.microsoftskydrive* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.AgeCastles* | Remove-AppxPackage"
-powershell.exe "Get-AppxPackage *Microsoft.ScreenSketch* | Remove-AppxPackage"
+::powershell.exe "Get-AppxPackage *Microsoft.ScreenSketch* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.YourPhone* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.WebMediaExtensions* | Remove-AppxPackage"
 powershell.exe "Get-AppxPackage *Microsoft.MixedReality.Portal* | Remove-AppxPackage"
@@ -734,7 +734,7 @@ powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Micr
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.BingSports* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.BingTranslator* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.BingWeather* | Remove-AppxProvisionedPackage -Online"
-powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.FreshPaint* | Remove-AppxProvisionedPackage -Online"
+::powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.FreshPaint* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.DesktopAppInstaller* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.Getstarted* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.GetHelp* | Remove-AppxProvisionedPackage -Online"
@@ -796,17 +796,17 @@ powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Micr
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.Print3D* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.SkypeApp* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.Wallet* | Remove-AppxProvisionedPackage -Online"
-powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.Windows.Photos* | Remove-AppxProvisionedPackage -Online"
+::powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.Windows.Photos* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WindowsAlarms* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WindowsCamera* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.windowscommunicationsapps* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WindowsFeedbackHub* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WindowsMaps* | Remove-AppxProvisionedPackage -Online"
-powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WindowsSoundRecorder* | Remove-AppxProvisionedPackage -Online"
+::powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WindowsSoundRecorder* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.XboxApp* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.Xbox.TCUI* | Remove-AppxProvisionedPackage -Online"
-powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.ZuneMusic* | Remove-AppxProvisionedPackage -Online"
-powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.ZuneVideo* | Remove-AppxProvisionedPackage -Online"
+::powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.ZuneMusic* | Remove-AppxProvisionedPackage -Online"
+::powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.ZuneVideo* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *828B5831.HiddenCityMysteryofShadows* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *king.com.BubbleWitch3Saga* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Fitbit.FitbitCoach* | Remove-AppxProvisionedPackage -Online"
@@ -824,7 +824,7 @@ powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Nord
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *NAVER.LINEwin8* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *microsoft.microsoftskydrive* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.AgeCastles* | Remove-AppxProvisionedPackage -Online"
-powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.ScreenSketch* | Remove-AppxProvisionedPackage -Online"
+::powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.ScreenSketch* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.YourPhone* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.WebMediaExtensions* | Remove-AppxProvisionedPackage -Online"
 powershell.exe "Get-AppxProvisionedPackage -Online | where Displayname -EQ *Microsoft.MixedReality.Portal* | Remove-AppxProvisionedPackage -Online"
